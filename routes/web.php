@@ -22,7 +22,7 @@ Route::prefix('shopify')->group(function () {
 
 Route::post('/webhooks/shopify', WebhookController::class);
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin-api')->group(function () {
     Route::get('/dashboard/summary', [DashboardController::class, 'summary']);
     Route::get('/dashboard/trends', [DashboardController::class, 'trends']);
     Route::get('/dashboard/todos', [DashboardController::class, 'todos']);
