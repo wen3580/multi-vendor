@@ -13,12 +13,12 @@ Route::group([
 
     $router->get('/', 'DashboardController@index')->name('home');
 
-    $router->resource('affiliates', AffiliateController::class);
-    $router->resource('applications', ApplicationController::class);
-    $router->resource('attributions', AttributionController::class)->only(['index', 'show']);
-    $router->resource('commissions', CommissionController::class);
-    $router->resource('coupons', CouponController::class)->except(['show']);
-    $router->resource('payouts', PayoutController::class)->except(['show']);
+    $router->resource('affiliates', 'AffiliateController');
+    $router->resource('applications', 'ApplicationController');
+    $router->resource('attributions', 'AttributionController')->only(['index', 'show']);
+    $router->resource('commissions', 'CommissionController');
+    $router->resource('coupons', 'CouponController')->except(['show']);
+    $router->resource('payouts', 'PayoutController')->except(['show']);
 
     $router->get('settings', 'SettingController@index');
     $router->get('logs/webhooks', 'WebhookLogController@index');
