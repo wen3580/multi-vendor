@@ -8,8 +8,11 @@ use Illuminate\Support\Str;
 
 class OAuthController extends Controller
 {
-    public function __construct(private readonly ShopifyOAuthService $oauthService)
+    private ShopifyOAuthService $oauthService;
+
+    public function __construct(ShopifyOAuthService $oauthService)
     {
+        $this->oauthService = $oauthService;
     }
 
     public function install(Request $request)
